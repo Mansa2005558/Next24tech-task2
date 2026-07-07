@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMan E-commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        #cart-count-badge{position:absolute;top:-8px;right:-8px;background:#088178;color:#fff;border-radius:50%;width:18px;height:18px;font-size:11px;display:none;align-items:center;justify-content:center;font-weight:bold;}
+        #nav-user-greet{color:#088178;font-weight:600;font-size:14px;margin-right:8px;}
+        #nav-logout-btn{background:#088178;color:#fff;border:none;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:13px;}
+        #nav-login-link{color:#1a1a2e;}
+    </style>
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="img/logo1.png" class="logo" alt="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <span id="nav-user-greet" style="display:none;"></span>
+                    <a href="#" id="nav-login-link" onclick="showAuthModal('login');return false;">Login</a>
+                    <button id="nav-logout-btn" onclick="logout()" style="display:none;">Logout</button>
+                </li>
+                <li id="lg-bag" style="position:relative;">
+                    <a href="cart.html"><i class="fa-solid fa-cart-shopping custom-icon"></i></a>
+                    <span id="cart-count-badge"></span>
+                </li>
+                <a href="#" id="close"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html" style="position:relative;">
+                <i class="fa-solid fa-cart-shopping custom-icon"></i>
+                <span id="cart-count-badge-m" style="position:absolute;top:-8px;right:-8px;background:#088178;color:#fff;border-radius:50%;width:16px;height:16px;font-size:10px;display:none;align-items:center;justify-content:center;"></span>
+            </a>
+            <i id="bar" class="fa fa-bars"></i>
+        </div>
+    </section>
+
+    <section id="hero">
+        <h4>Trade-in-offer</h4>
+        <h2>Super value deals</h2>
+        <h1>On all products</h1>
+        <p>Save more coupons & up to 70% off! </p>
+        <button onclick="window.location.href='shop.html'">Shop Now</button>
+    </section>
+
+    <section id="feature" class="section-p1">
+        <div class="fe-box"><img src="img/feature/f1.png" alt=""><h6>Free Shipping</h6></div>
+        <div class="fe-box"><img src="img/feature/f2.png" alt=""><h6>Online Order</h6></div>
+        <div class="fe-box"><img src="img/feature/f3.png" alt=""><h6>Save Money</h6></div>
+        <div class="fe-box"><img src="img/feature/f4.png" alt=""><h6>Promotions</h6></div>
+        <div class="fe-box"><img src="img/feature/f5.png" alt=""><h6>Happy Sell</h6></div>
+        <div class="fe-box"><img src="img/feature/f6.png" alt=""><h6>24/7 Service</h6></div>
+    </section>
+
+    <section id="product1" class="section-p1">
+        <h2>Featured Products</h2>
+        <p>Winter Collection New Modern Design</p>
+        <div class="pro-container" id="featured-products">
+            <!-- Products loaded from backend API -->
+            <div class="pro"><img src="img/product/p1.webp" alt=""><div class="des"><span>Alamode By Akansha</span><h5>SIKURA WINTER DRESS</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>RS. 2,799.00</h4></div><a href="#" onclick="addToCart(1);return false;"><i class="fa-solid fa-cart-shopping custom-icon"></i></a></div>
+            <div class="pro"><img src="img/product/p2.webp" alt=""><div class="des"><span>Alamode By Akansha</span><h5>TARON KNITTED A-LINE DRESS</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>RS. 2,450.00</h4></div><a href="#" onclick="addToCart(2);return false;"><i class="fa-solid fa-cart-shopping custom-icon"></i></a></div>
+            <div class="pro"><img src="img/product/p3.jpeg" alt=""><div class="des"><span>Alamode By Akansha</span><h5>LAUDER DRESS AND TOP SET</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>RS. 2,999.00</h4></div><a href="#" onclick="addToCart(3);return false;"><i class="fa-solid fa-cart-shopping custom-icon"></i></a></div>
+            <div class="pro"><img src="img/product/p4.jpg" alt=""><div class="des"><span>Alamode By Akansha</span><h5>MADINE VINTAGE COORD SET</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>RS. 3,150.00</h4></div><a href="#" onclick="addToCart(4);return false;"><i class="fa-solid fa-cart-shopping custom-icon"></i></a></div>
+            <div class="pro"><img src="img/product/p5.jpeg" alt=""><div class="des"><span>Alamode By Akansha</span><h5>HILDA STATEMENT DRESS</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>RS. 2,350.00</h4></div><a href="#" onclick="addToCart(5);return false;"><i class="fa-solid fa-cart-shopping custom-icon"></i></a></div>
+            <div class="pro"><img src="img/product/p6.jpg" alt=""><div class="des"><span>Alamode By Akansha</span><h5>BARROW TWEED DRESS</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>RS. 3,099.00</h4></div><a href="#" onclick="addToCart(6);return false;"><i class="fa-solid fa-cart-shopping custom-icon"></i></a></div>
+            <div class="pro"><img src="img/product/p7.jpg" alt=""><div class="des"><span>Alamode By Akansha</span><h5>CHARLOTTE STATEMENT DRESS</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>RS. 2,899.00</h4></div><a href="#" onclick="addToCart(7);return false;"><i class="fa-solid fa-cart-shopping custom-icon"></i></a></div>
+            <div class="pro"><img src="img/product/p8.webp" alt=""><div class="des"><span>Alamode By Akansha</span><h5>NOVA ELEGANT PLEATED BLAZER DRESS</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>RS. 3,450.00</h4></div><a href="#" onclick="addToCart(8);return false;"><i class="fa-solid fa-cart-shopping custom-icon"></i></a></div>
+        </div>
+    </section>
+
+    <section id="banner" class="section-m1">
+        <h4>Repair Service</h4>
+        <h2>"Enjoy <span>70% off</span> expert repair services—limited time offer!"</h2>
+        <button class="normal">Explore More</button>
+    </section>
+
+    <section id="product1" class="section-p1">
+        <h2>New Arrivals</h2>
+        <p>Winter Collection New Modern Design</p>
+        <div class="pro-container">
+            <div class="pro"><img src="img/product/n/n11.webp" alt=""><div class="des"><span>Indiamart</span><h5>Acrylic Polyester Plain Winter Women Top</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>RS. 499.00</h4></div><a href="#"><i class="fa-solid fa-cart-shopping custom-icon"></i></a></div>
+            <div class="pro"><img src="img/product/n/n22.jpg" alt=""><div class="des"><span>Aloob</span><h5>Pink Dress for women</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>RS. 899.00</h4></div><a href="#"><i class="fa-solid fa-cart-shopping custom-icon"></i></a></div>
+            <div class="pro"><img src="img/product/n/n33.jpg" alt=""><div class="des"><span>Bharatasya</span><h5>Men Solid Acrylic Winter Beanie</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>RS. 2,999.00</h4></div><a href="#"><i class="fa-solid fa-cart-shopping custom-icon"></i></a></div>
+            <div class="pro"><img src="img/product/n/n4.webp" alt=""><div class="des"><span>Studiofit Women</span><h5>Women Winter Classic Woolen Dresses</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>RS. 999.00</h4></div><a href="#"><i class="fa-solid fa-cart-shopping custom-icon"></i></a></div>
+            <div class="pro"><img src="img/product/n/n5.jpeg" alt=""><div class="des"><span>Wardrobenthings</span><h5>WnTCo Winter is Here Dress</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>RS. 699.00</h4></div><a href="#"><i class="fa-solid fa-cart-shopping custom-icon"></i></a></div>
+            <div class="pro"><img src="img/product/n/n6.jpg" alt=""><div class="des"><span>Aloob</span><h5>White V-Neck Winter Dress</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>RS. 3,099.00</h4></div><a href="#"><i class="fa-solid fa-cart-shopping custom-icon"></i></a></div>
+            <div class="pro"><img src="img/product/n/n7.avif" alt=""><div class="des"><span>Aloob</span><h5>White Dresses for women</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>RS. 2,899.00</h4></div><a href="#"><i class="fa-solid fa-cart-shopping custom-icon"></i></a></div>
+            <div class="pro"><img src="img/product/n/n8.jpg" alt=""><div class="des"><span>Aloob</span><h5>Winter Green Bodycon Dress</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>RS. 3,450.00</h4></div><a href="#"><i class="fa-solid fa-cart-shopping custom-icon"></i></a></div>
+        </div>
+    </section>
+
+    <section id="sm-banner" class="section-p1">
+        <div class="banner-box"><h3>20</h3><h3>24</h3><h1>NEW</h1><h1>LOOK</h1><span>UP TO 50% OFF</span><button class="white">Learn More</button></div>
+        <div class="banner-box banner-box2"><h6>NEW WINTER SEASON FASHION COLLECTIONS</h6><h1>SPECIAL</h1><h1>OFFER</h1><span>SALE UP TO 50% OFF</span><button class="white">New Collection</button></div>
+    </section>
+
+    <section id="banner3">
+        <div class="banner-box banner-box2"><h3>Trade-in-offer</h3><h4>Save more coupons & up to 70% off!</h4></div>
+        <div class="banner-box banner-box3"><h3>Season Sale</h3><h4>Winter Collection - 50% OFF</h4></div>
+        <div class="banner-box"><h3>Upcoming Season</h3><h4>Summer Collection - 50% OFF</h4></div>
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up For Newsletter</h4>
+            <p>Get E-mail Updates about our latest shop and <span>special offers.</span></p>
+        </div>
+        <div class="form">
+            <input type="text" id="newsletter-email" placeholder="Your email address">
+            <button class="normal" onclick="showToast('Newsletter ke liye subscribe kar liya! 🎉')">Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/logo1.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> Nagar Vadavali Road, Ambivali West</p>
+            <p><strong>Phone:</strong> +91 XXXXXXXXXX</p>
+            <p><strong>Hours:</strong> 10.00 am - 6.00 pm, Mon-Sat</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="contact.html">Contact us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#" onclick="showAuthModal('login');return false;">Sign In</a>
+            <a href="cart.html">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="img/footer/111.png" alt="">
+                <img src="img/footer/app22.webp" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="img/footer/payment.png" alt="">
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="api.js"></script>
+</body>
+</html>
